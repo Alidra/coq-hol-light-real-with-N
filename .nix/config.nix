@@ -21,7 +21,7 @@
 
   ## If you want to select a different attribute (to build from the local sources as well)
   ## when calling `nix-shell` and `nix-build` without the `--argstr job` argument
-  shell-attribute = "{{nix_name}}";
+  # shell-attribute = "{{nix_name}}";
 
   ## Maybe the shortname of the library is different from
   ## the name of the nixpkgs attribute, if so, set it here:
