@@ -1,9 +1,7 @@
 {
   lib,
   mkCoqDerivation,
-  rocq-core,
   coq,
-  stdlib,
   version ? null,
 }:
 
@@ -23,7 +21,7 @@
   mlPlugin = true;
   useDune = true;
 
-  propagatedBuildInputs = [ coq stdlib rocq-core.ocamlPackages.ppx_optcomp ];
+  propagatedBuildInputs = [ coq ];
 
   meta = with lib; {
     homepage = "https://github.com/Deducteam/coq-hol-light-real/";
