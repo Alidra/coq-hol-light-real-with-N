@@ -1,0 +1,9 @@
+{
+  format = "1.0.0";
+  attribute = "coq-hol-light-real-with-N";
+  default-bundle = "default";
+  bundles."default" = {
+    rocqPackages.rocq-core.override.version = "9.0";
+  };
+  cachix.coq = {};
+}
