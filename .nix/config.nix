@@ -5,7 +5,7 @@
   bundles."default" = {
     rocqPackages.rocq-core.override.version = "9.0";
     rocqPackages.coq-hol-light.override.version = "3.0.0";
-    push-branches = [ "main" ];
+    push-branches = [ "main" "withnix" ];
   };
   cachix.coq = {};
 }
