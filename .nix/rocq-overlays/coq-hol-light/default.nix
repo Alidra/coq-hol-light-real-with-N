@@ -9,6 +9,8 @@ with lib; mkRocqDerivation {
     "3.0.0".sha256 = "sha256-186Z0/wCuGAjIvG1LoYBMPooaC6HmnKWowYXuR0y6bA=";
   };
   releaseRev = v: "v${v}";
+  propagatedBuildInputs = [ coq-hol-light-real-with-N ];
+
   meta = {
   };
 }

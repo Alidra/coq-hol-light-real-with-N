@@ -2,6 +2,7 @@ jobs:
   coq-hol-light:
     needs:
     - rocq-core
+    - coq-hol-light-real-with-N
     runs-on: ubuntu-latest
     steps:
     - name: Determine which commit to initially checkout
@@ -53,6 +54,10 @@ jobs:
       name: 'Building/fetching previous CI target: rocq-core'
       run: NIXPKGS_ALLOW_UNFREE=1 nix-build --no-out-link --argstr bundle "default"
         --argstr job "rocq-core"
+    - if: steps.stepCheck.outputs.status != 'fetched'
+      name: 'Building/fetching previous CI target: coq-hol-light-real-with-N'
+      run: NIXPKGS_ALLOW_UNFREE=1 nix-build --no-out-link --argstr bundle "default"
+        --argstr job "coq-hol-light-real-with-N"
     - if: steps.stepCheck.outputs.status != 'fetched'
       name: Building/fetching current CI target
       run: NIXPKGS_ALLOW_UNFREE=1 nix-build --no-out-link --argstr bundle "default"
