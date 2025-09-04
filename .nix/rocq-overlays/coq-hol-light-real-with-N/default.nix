@@ -1,10 +1,35 @@
 
-{ lib, mkRocqDerivation
+{ lib, mkRocqDerivation, which, coq
+  ## declare extra dependencies here, to be used in propagateBuildInputs e.g.
+  # , mathcomp, coq-elpi
   , version ? null }:
+
 with lib; mkRocqDerivation {
   pname = "coq-hol-light-real-with-N";
+  ## you can configure the domain, owner and repository, the default are:
+  repo = "coq-hol-light-real-with-N";
+  owner = "Deducteam";
+  domain = "github.com";
+
   inherit version;
-  defaultVersion = "1.0.0";
+## The `defaultVersion` attribute is important for nixpkgs but can be kept unchanged
+## for local usage since it will be ignored locally if
+## - this derivation corresponds to the main attribute,
+## - or its version is overridden (by a branch, PR, url or path) in `.nix/config.nix`.
+  defaultVersion = with versions; switch coq.coq-version [
+    ## Example of possible dependencies
+    # { case = range "8.13" "8.14"; out = "1.2.0"; }
+    ## other predicates are `isLe v`, `isLt v`, `isGe v`, `isGt v`, `isEq v` etc
+  ] null;
+
   meta = {
+    ## Describe your package in one sentence
+    # description = "";
+    ## Kindly ask one of these people if they want to be an official maintainer.
+    ## (You might also consider adding yourself to the list of maintainers)
+    # maintainers = with maintainers; [ cohencyril siraben vbgl Zimmi48 ];
+    ## Pick a license from
+    ## https://github.com/NixOS/nixpkgs/blob/master/lib/licenses.nix
+    # license = licenses.mit;
   };
 }
