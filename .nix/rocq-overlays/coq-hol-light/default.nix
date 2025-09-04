@@ -1,5 +1,5 @@
 
-{ lib, mkRocqDerivation, coq-hol-light-real-with-N
+{ lib, mkRocqDerivation, coq-hol-light-real-with-N, coq
   , version ? null }:
 with lib; mkRocqDerivation {
   pname = "coq-hol-light";
