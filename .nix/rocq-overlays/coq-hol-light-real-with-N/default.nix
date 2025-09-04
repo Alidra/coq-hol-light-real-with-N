@@ -1,5 +1,5 @@
 
-{ lib, mkRocqDerivation, which, coq
+{ lib, mkRocqDerivation, which, coq, bignums
   ## declare extra dependencies here, to be used in propagateBuildInputs e.g.
   # , mathcomp, coq-elpi
   , version ? null }:
@@ -21,7 +21,7 @@ with lib; mkRocqDerivation {
     # { case = range "8.13" "8.14"; out = "1.2.0"; }
     ## other predicates are `isLe v`, `isLt v`, `isGe v`, `isGt v`, `isEq v` etc
   ] null;
-
+propagatedBuildInputs = [ bignums ];
   meta = {
     ## Describe your package in one sentence
     # description = "";
