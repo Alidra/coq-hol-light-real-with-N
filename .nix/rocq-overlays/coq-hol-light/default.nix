@@ -3,11 +3,11 @@
   , version ? null }:
 with lib; mkRocqDerivation {
   pname = "coq-hol-light";
-  inherit version;
+#  inherit version;
   repo = "coq-hol-light";
   owner = "Deducteam";
   domain = "github.com";
-  defaultVersion = "main";
+  version = "Deducteam:main";
 #  release = {
 #    "3.0.0".sha256 = "sha256-186Z0/wCuGAjIvG1LoYBMPooaC6HmnKWowYXuR0y6bA=";
 #  };
