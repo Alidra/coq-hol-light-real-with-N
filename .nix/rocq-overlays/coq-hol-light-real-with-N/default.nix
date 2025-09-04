@@ -7,8 +7,8 @@
 with lib; mkRocqDerivation {
   pname = "coq-hol-light-real-with-N";
   ## you can configure the domain, owner and repository, the default are:
-  repo = "coq-hol-light-real-with-N";
-  owner = "Deducteam";
+  repo = "bennnnny";
+  owner = "sdfdsDeducteam";
   domain = "github.com";
 
   inherit version;
