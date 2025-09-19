@@ -1,8 +1,19 @@
 jobs:
+  fourcolor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v22
+      - uses: cachix/cachix-action@v12
+        with:
+          name: fourcolor
+      - name: Build four-colors
+        run: nix build .#four-colors
   coq-hol-light:
     needs:
     - rocq-core
     - coq-hol-light-real-with-N
+    - four-color
     runs-on: ubuntu-latest
     steps:
     - name: Determine which commit to initially checkout
