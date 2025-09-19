@@ -11,7 +11,7 @@ jobs:
         run: nix build .#four-colors
   coq-hol-light:
     needs:
-    - rocq-core
+    - fourcolor
     - coq-hol-light-real-with-N
     - four-color
     runs-on: ubuntu-latest
