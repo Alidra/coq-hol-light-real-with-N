@@ -11,9 +11,9 @@ jobs:
         run: nix build .#four-colors
   coq-hol-light:
     needs:
-    - fourcolor
+    - rocq-core
     - coq-hol-light-real-with-N
-    - four-color
+    - fourcolor
     runs-on: ubuntu-latest
     steps:
     - name: Determine which commit to initially checkout
